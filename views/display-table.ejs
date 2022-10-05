@@ -1,0 +1,29 @@
+<%- include('header')  -%> 
+
+<% if(Product.length>0) { %> 
+
+    <table border="1">
+        <tr>
+            <th>Index</th>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Category ID</th>
+            <th>Action</th>
+        </tr>
+        <% for(var i=0; i<Product.length; i++) %> {%>
+            <tr>
+                <td><%= i %></td>
+                <td><%= Product[i].product_id %></td>
+                <td><%= Product[i].productName %></td>
+                <td><%= Product[i].category %></td>
+                <td><%= Product[i].category_id %></td>
+                <td>
+                    <a href="/edit/<%= Product[i]._id%>">Edit </a>
+                    <a href="/delete/<%= Product[i]._id%>">Delete </a>
+                    <a href="/show/<%= Product[i]._id%>">Show </a>
+                </td>
+            </tr>
+
+        <% } %> 
+    </table>
